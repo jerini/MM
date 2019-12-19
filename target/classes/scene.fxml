@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="750.0" maxWidth="1000.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grain_growth.Controller">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="340.0">
+         <children>
+            <Label layoutX="14.0" layoutY="54.0" text="Grid" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="columnsText" layoutX="60.0" layoutY="69.0" prefHeight="26.0" prefWidth="45.0" text="300">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <TextField fx:id="rowsText" layoutX="116.0" layoutY="69.0" prefHeight="26.0" prefWidth="45.0" text="300">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <Label layoutX="59.0" layoutY="55.0" text="columns">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label layoutX="123.0" layoutY="55.0" text="rows">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Separator layoutX="19.0" layoutY="102.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="21.0" layoutY="111.0" text="Algorithm:" underline="true">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="algorithmComboBox" layoutX="19.0" layoutY="132.0" prefHeight="26.0" prefWidth="135.0" />
+            <Label layoutX="177.0" layoutY="111.0" text="Neighbourhood:" underline="true">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="neighbourhoodComboBox" layoutX="178.0" layoutY="132.0" prefHeight="26.0" prefWidth="135.0" />
+            <Label layoutX="14.0" layoutY="176.0" text="Nucleating" textFill="#070707" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Separator layoutX="19.0" layoutY="165.0" prefHeight="3.0" prefWidth="294.0" />
+            <Button fx:id="nucleatingButton" disable="true" layoutX="234.0" layoutY="223.0" mnemonicParsing="false" onAction="#nucleating" text="Nucleating">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="nucleatingComboBox" layoutX="211.0" layoutY="191.0" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutX="251.0" layoutY="177.0" text="type">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <Label layoutX="105.0" layoutY="177.0" text="n grains">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+            <TextField fx:id="numberOfGrainsText" layoutX="105.0" layoutY="191.0" prefHeight="26.0" prefWidth="45.0" text="20">
+               <font>
+                  <Font size="12.0" />
+               </font></TextField>
+            <Separator layoutX="21.0" layoutY="252.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="18.0" layoutY="607.0" text="Growth" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="startButton" disable="true" layoutX="77.0" layoutY="606.0" mnemonicParsing="false" onAction="#start" text="START" textFill="#111111">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="stopButton" disable="true" layoutX="131.0" layoutY="606.0" mnemonicParsing="false" onAction="#stop" text="STOP" textFill="#141414">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="generateGridButton" layoutX="214.0" layoutY="71.0" mnemonicParsing="false" onAction="#generateGrid" text="Generate grid" textFill="#141414">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Separator layoutX="21.0" layoutY="638.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="17.0" layoutY="648.0" text="File" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="importFromFileButton" layoutX="15.0" layoutY="672.0" mnemonicParsing="false" onAction="#importFromFile" text="Import">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="exportToFileButton" disable="true" layoutX="73.0" layoutY="672.0" mnemonicParsing="false" onAction="#exportToFile" text="Export">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="162.0" layoutY="648.0" text="Bitmap" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="importFromBitmapButton" layoutX="159.0" layoutY="672.0" mnemonicParsing="false" onAction="#importFromBitmap" text="Import">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="exportToBitmapButton" disable="true" layoutX="217.0" layoutY="672.0" mnemonicParsing="false" onAction="#exportToBitmap" text="Export">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="120.0" layoutY="263.0" text="n">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amountOfInclusionsText" layoutX="101.0" layoutY="277.0" prefHeight="26.0" prefWidth="45.0" text="10">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="251.0" layoutY="263.0" text="type">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="typeOfInclusionComboBox" layoutX="210.0" layoutY="277.0" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutX="17.0" layoutY="262.0" text="Inclusions" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Separator layoutX="21.0" layoutY="339.0" prefHeight="3.0" prefWidth="294.0" />
+            <Button fx:id="addInclusionsButton" disable="true" layoutX="211.0" layoutY="310.0" mnemonicParsing="false" onAction="#addInclusions" text="Add inclusions">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="circularCheckBox" layoutX="166.0" layoutY="54.0" mnemonicParsing="false" text="circular" visible="false">
+               <font>
+                  <Font size="11.0" />
+               </font></CheckBox>
+            <Label layoutX="162.0" layoutY="263.0" text="size">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sizeOfInclusionText" layoutX="153.0" layoutY="277.0" prefHeight="26.0" prefWidth="39.0" text="5">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="188.0" layoutY="610.0" text="probability:">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="probabilityText" layoutX="253.0" layoutY="604.0" prefHeight="26.0" prefWidth="31.0" text="90">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="285.0" layoutY="610.0" text="\%">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="349.0" text="Structure:" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="structureComboBox" disable="true" layoutX="95.0" layoutY="344.0" prefHeight="26.0" prefWidth="118.0" />
+            <Separator layoutX="19.0" layoutY="374.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="222.0" layoutY="350.0" text="amount:">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="numberOfStructuresText" layoutX="275.0" layoutY="344.0" prefHeight="26.0" prefWidth="31.0" text="2">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="16.0" layoutY="383.0" text="Grain selection" textFill="#141414" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="226.0" layoutY="384.0" text="type">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="grainSelectionComboBox" disable="true" layoutX="178.0" layoutY="398.0" prefHeight="26.0" prefWidth="135.0" />
+            <Separator layoutX="21.0" layoutY="460.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="149.0" layoutY="384.0" text="n">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="numberOfSelectedGrainsText" layoutX="137.0" layoutY="398.0" prefHeight="26.0" prefWidth="31.0" text="1">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="selectGrainsButton" disable="true" layoutX="216.0" layoutY="431.0" mnemonicParsing="false" onAction="#selectEdgeGrains" text="Select grains" textFill="#030303">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <TextField fx:id="grainBoundaryEnergyText" layoutX="159.0" layoutY="191.0" prefHeight="26.0" prefWidth="45.0" text="1.0">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="162.0" layoutY="177.0" text="energy">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="220.0" layoutY="572.0" text="MCS:">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="MCSText" layoutX="253.0" layoutY="566.0" prefHeight="26.0" prefWidth="31.0" text="0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Separator layoutX="19.0" layoutY="599.0" prefHeight="3.0" prefWidth="294.0" />
+            <Label layoutX="16.0" layoutY="470.0" text="MC Static recrystalization" underline="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="494.0" text="Energy distribution">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="energyDistributionComboBox" disable="true" layoutX="23.0" layoutY="508.0" prefHeight="26.0" prefWidth="118.0" />
+            <Label layoutX="156.0" layoutY="494.0" text="E inside">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="energyInsideText" layoutX="162.0" layoutY="508.0" prefHeight="26.0" prefWidth="31.0" text="2">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="215.0" layoutY="494.0" text="E on edges">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="energyOnEdgesText" layoutX="230.0" layoutY="508.0" prefHeight="26.0" prefWidth="31.0" text="7">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="30.0" layoutY="545.0" text="Nucleation module">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="nucleationModuleComboBox" disable="true" layoutX="23.0" layoutY="559.0" prefHeight="26.0" prefWidth="118.0" />
+            <Button fx:id="calculateEnergyButton" disable="true" layoutX="168.0" layoutY="541.0" mnemonicParsing="false" onAction="#calculateEnergy" text="Calculate E">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <ToggleButton fx:id="showEnergyToggleButton" disable="true" layoutX="254.0" layoutY="541.0" mnemonicParsing="false" onAction="#showEnergy" text="Show E">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </Pane>
+      <Pane prefHeight="600.0" prefWidth="678.0">
+         <children>
+            <Canvas fx:id="canvas" height="600.0" layoutX="35.0" layoutY="75.0" width="600.0" />
+            <Separator layoutX="-5.0" layoutY="14.0" orientation="VERTICAL" prefHeight="695.0" prefWidth="9.0" />
+         </children>
+      </Pane>
+   </children>
+</HBox>
